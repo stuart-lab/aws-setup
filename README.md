@@ -1,4 +1,4 @@
-[![Docker Image CI](https://github.com/stuart-lab/aws/actions/workflows/docker-image.yml/badge.svg)](https://github.com/stuart-lab/aws/actions/workflows/docker-image.yml)
+[![rstudio image](https://github.com/stuart-lab/aws/actions/workflows/docker-image.yml/badge.svg)](https://github.com/stuart-lab/aws/actions/workflows/docker-image.yml)
 
 # Setting up AWS EC2 instance
 
@@ -15,15 +15,23 @@
 11. Add rule for custom TCP, 8000-9000, source anywhere. HTTP, 80, anywhere. HTTPS, 443, anywhere
 12. Copy the IP address
 13. Log in via ssh: `ssh -i <key> ubuntu@<ip>`
-14. Run startup script to install dependencies
-15. Run rstudio docker image:
+14. Clone this repository: `git clone git@github.com:stuart-lab/aws.git`
+15. Run startup script to install dependencies: `startup.sh`
+16. Logout
+
+# Starting RStudio Server
+
+1. Run rstudio docker image:
 
 ```
 docker run --name rstudio --rm -e PASSWORD=password -d -p 8889:8787 timoast/rstudio
 ```
 
-16. Open `<ip>:8889`, enter username `ubuntu` and passwork `password`
+2. Open `<ip>:8889`, enter username `ubuntu` and passwork `password`
 
+# Starting Jupyterlab
+
+1. 
 
 Useful links:  
 https://ec2-tutorials.readthedocs.io/en/latest/index.html  
