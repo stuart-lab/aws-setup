@@ -14,7 +14,13 @@
 12. Copy the IP address
 13. Log in via ssh: `ssh -i <key> ubuntu@<ip>`
 14. Run startup script to install dependencies
-15. Run rstudio docker image
+15. Run rstudio docker image:
+
+```
+docker run --name rstudio --rm -e PASSWORD=password -d -p 8889:8787 timoast/rstudio
+```
+
+16. Open <ip>:8889, enter username `ubuntu` and passwork `password`
 
 
 Useful links:  
