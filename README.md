@@ -20,7 +20,7 @@
 docker run --name rstudio --rm -e PASSWORD=password -d -p 8889:8787 timoast/rstudio
 ```
 
-16. Open <ip>:8889, enter username `ubuntu` and passwork `password`
+16. Open `<ip>:8889`, enter username `ubuntu` and passwork `password`
 
 
 Useful links:  
