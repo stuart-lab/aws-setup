@@ -9,10 +9,12 @@
 7. Allow SSH traffic from anywhere
 8. Select the amount of EBS storage required
 9. Launch instance
-10. Copy the IP address
-11. Log in via ssh: `ssh -i <key> ubuntu@<ip>`
-12. Run startup script to install dependencies
-13. Run rstudio docker image
+10. Got to instance details > security > security groups > inbound > add rule
+11. Add rule for custom TCP, 8000-9000, source anywhere. HTTP, 80, anywhere. HTTPS, 443, anywhere
+12. Copy the IP address
+13. Log in via ssh: `ssh -i <key> ubuntu@<ip>`
+14. Run startup script to install dependencies
+15. Run rstudio docker image
 
 
 Useful links:  
