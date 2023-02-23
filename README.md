@@ -1,3 +1,5 @@
+[![Docker Image CI](https://github.com/stuart-lab/aws/actions/workflows/docker-image.yml/badge.svg)](https://github.com/stuart-lab/aws/actions/workflows/docker-image.yml)
+
 # Setting up AWS EC2 instance
 
 1. Log into AWS console
