@@ -29,9 +29,6 @@ docker run --name rstudio --rm -e PASSWORD=password -d -p 8889:8787 timoast/rstu
 
 2. Open `<ip>:8889`, enter username `rstudio` and passwork `password`
 
-# Starting Jupyterlab
-
-1. 
 
 Useful links:  
 https://ec2-tutorials.readthedocs.io/en/latest/index.html  
