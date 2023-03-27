@@ -29,6 +29,11 @@ docker run --name rstudio --rm -e PASSWORD=password -d -p 8889:8787 timoast/rstu
 
 2. Open `<ip>:8889`, enter username `rstudio` and passwork `password`
 
+# Running R interactively
+
+```
+docker run -ti --rm timoast/rstudio R
+```
 
 Useful links:  
 https://ec2-tutorials.readthedocs.io/en/latest/index.html  
