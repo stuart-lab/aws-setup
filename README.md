@@ -12,7 +12,7 @@
 8. Select the amount of EBS storage required
 9. Launch instance
 10. Got to instance details > security > security groups > inbound > add rule
-11. Add rule for custom TCP, 8000-9000, source anywhere. HTTP, 80, anywhere. HTTPS, 443, anywhere
+11. Add the following custom TCP rules: port 8787 (rstudio), port 8888 (jupyterlab)
 12. Copy the IP address
 13. Log in via ssh: `ssh -i <key> ubuntu@<ip>`
 14. Clone this repository: `git clone https://github.com/stuart-lab/aws.git`
@@ -24,7 +24,7 @@
 1. Run rstudio docker image:
 
 ```
-docker run --name rstudio --rm -e PASSWORD=password -d -p 8889:8787 timoast/rstudio
+docker run --name rstudio --rm -e PASSWORD=password -d -p 8787:8787 timoast/rstudio
 ```
 
 2. Open `<ip>:8889`, enter username `rstudio` and passwork `password`
