@@ -19,6 +19,22 @@
 15. Run startup script to install dependencies: `sh aws/startup.sh`
 16. Logout
 
+# Installing AWS CLI
+
+Download and install:
+
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
+
+Configure:
+
+```
+aws configure sso
+```
+
 # Starting RStudio Server
 
 1. Run rstudio docker image:
