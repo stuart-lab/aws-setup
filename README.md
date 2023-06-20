@@ -78,6 +78,12 @@ docker run --name rstudio --rm -e PASSWORD=password -d -p 8787:8787 timoast/rstu
 docker run -ti --rm timoast/rstudio R
 ```
 
+# Other tips
+
+The instance type can be changed easily via the AWS console by stopping the instance and then selecting
+Actions > Instance settings > Change instance type. You should try to use the minimum instance size
+that is required for the computations that are being run. Scale the instance type according to need. 
+
 Useful links:  
 https://ec2-tutorials.readthedocs.io/en/latest/index.html  
 https://davetang.org/muse/2022/12/07/running-rstudio-server-on-amazon-ec2/  
