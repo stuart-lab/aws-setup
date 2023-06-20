@@ -41,6 +41,20 @@ Security credentials -> Access keys -> Create new access key
 
 Note the key ID and secret access key.
 
+# Storing logs
+
+A*STAR policy requires that system logs are stored for a minimum of 1 year for EC2 instances. To ensure logs are stored,
+we copy from `/var/log/` to an S3 bucket using a shell script. This shell script can be run automatically each time you
+log out of the server by including it in the `~/.bash_logout` file.
+
+First, make sure the aws cli is authenticated so that you can write to the S3 bucket (above). Next, add this code to
+`~/.bash_logout` to ensure compliance with A*STAR policies:
+
+```bash
+# copy logs to S3 bucket for storage
+aws s3 cp /var/log/ s3://stuartlab-logs/$(date +'%d_%m_%Y')/$RANDOM --recursive --exclude "*" --include "*log"
+```
+
 # Starting RStudio Server
 
 1. Run rstudio docker image:
