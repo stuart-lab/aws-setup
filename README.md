@@ -15,9 +15,16 @@
 11. Add the following custom TCP rules: port 8787 (rstudio), port 8888 (jupyterlab)
 12. Copy the IP address
 13. Log in via ssh: `ssh -i <key> ubuntu@<ip>`
-14. Clone this repository: `git clone https://github.com/stuart-lab/aws.git`
-15. Run startup script to install dependencies: `sh aws/startup.sh`
-16. Logout
+14. Run an OS update:
+    ```bash
+    sudo apt update
+    sudo apt upgrade -y
+    sudo apt dist-upgrade
+    sudo reboot
+    ```
+16. Log back in once rebooted and clone this repository: `git clone https://github.com/stuart-lab/aws.git`
+17. Run startup script to install dependencies: `sh aws/startup.sh`
+18. Logout
 
 # Installing AWS CLI
 
