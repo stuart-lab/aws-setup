@@ -8,7 +8,7 @@
 4. Select Ubuntu 22.04 operating system
 5. Choose instance type that is the minimum required for the project
 6. Select key pair, or create one
-7. Allow SSH traffic from anywhere
+7. Allow SSH traffic from your computer IP address only
 8. Select the amount of EBS storage required
 9. Launch instance
 10. Got to instance details > security > security groups > inbound > add rule
