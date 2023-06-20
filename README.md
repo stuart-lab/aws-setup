@@ -22,8 +22,8 @@
     sudo apt dist-upgrade
     sudo reboot
     ```
-16. Log back in once rebooted and clone this repository: `git clone https://github.com/stuart-lab/aws.git`
-17. Run startup script to install dependencies: `sh aws/startup.sh`
+16. Log back in once rebooted and clone this repository: `git clone https://github.com/stuart-lab/aws-setup.git`
+17. Run startup script to install dependencies: `sh aws-setup/startup.sh`
 18. Logout
 
 # Installing AWS CLI
