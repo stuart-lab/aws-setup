@@ -32,8 +32,14 @@ sudo ./aws/install
 Configure:
 
 ```
-aws configure sso
+aws configure
 ```
+
+To create AWS access keys, log into the AWS console and go to:
+
+Security credentials -> Access keys -> Create new access key
+
+Note the key ID and secret access key.
 
 # Starting RStudio Server
 
