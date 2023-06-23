@@ -2,7 +2,7 @@ FROM rocker/rstudio:latest
 
 MAINTAINER Tim Stuart <stuartt@gis.a-star.edu.sg>
 
-ARG bioc_ver=3.16
+ARG bioc_ver=3.17
 
 RUN apt-get clean all && \
 	apt-get update && \
