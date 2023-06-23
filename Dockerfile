@@ -20,8 +20,7 @@ RUN apt-get clean all && \
 		libglpk40 \
 		libgit2-dev \
 	&& apt-get clean all && \
-	apt-get purge && \
-	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+	apt-get purge
 
 RUN Rscript -e "install.packages(c('rmarkdown', 'tidyverse', 'devtools', 'BiocManager'));"
 RUN Rscript -e "BiocManager::install(version = '${bioc_ver}')"
