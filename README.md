@@ -11,7 +11,7 @@
 7. Allow SSH traffic from your computer IP address only
 8. Select the amount of EBS storage required
 9. Launch instance
-10. Got to instance details > security > security groups > inbound > add rule
+10. Go to instance details > security > security groups > inbound > add rule
 11. Add the following custom TCP rules: port 8787 (rstudio), port 8888 (jupyterlab)
 12. Copy the IP address
 13. Log in via ssh: `ssh -i <key> ubuntu@<ip>`
@@ -27,14 +27,6 @@
 18. Logout
 
 # Installing AWS CLI
-
-Download and install:
-
-```
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-```
 
 Configure:
 
