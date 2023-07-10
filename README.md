@@ -54,6 +54,96 @@ First, make sure the aws cli is authenticated so that you can write to the S3 bu
 aws s3 cp /var/log/ s3://stuartlab-logs/$(date +'%d_%m_%Y')/$RANDOM --recursive --exclude "*" --include "*log"
 ```
 
+# Installing mamba
+
+https://github.com/conda-forge/miniforge#mambaforge
+
+```
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+bash Mambaforge-$(uname)-$(uname -m).sh
+```
+
+# Installing jupyterlab
+
+Jupyterlab should be installed in the base mamba environment, all other packages will be installed in separate environments.
+
+From the base mamba environment, run:
+
+```
+mamba install -c conda-forge jupyterlab nodejs jupytext ipywidgets
+```
+
+## Creating an environment
+
+To create a new environment:
+
+```
+mamba create -n env
+mamba activate env
+
+# to link to the jupyterlab kernelspec
+mamba install -c anaconda ipykernel
+python -m ipykernel install --user --name env --display-name "Python (env)"
+```
+
+Note that you need to activate the environment before linking the kernel.
+
+## Installing pytorch
+
+```
+# create a new mamba environment
+mamba create -n torch
+mamba activate torch
+```
+
+For GPU support, the CUDA toolkit needs to be installed and available. Check whether it's installed by running:
+
+```
+nvcc --version
+```
+
+Choose one of the following lines depending on compute environment:
+
+```
+# install pytorch with CPU support
+mamba install -c pytorch pytorch torchvision torchaudio cpuonly
+```
+
+```
+# install pytorch with GPU support for CUDA 11.7
+mamba install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda=11.7
+```
+
+```
+# install pytorch with GPU support for CUDA 11.6
+mamba install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda=11.6
+```
+
+Install ipywidgets and link the kernel:
+
+```
+# install ipywidgets within the environment
+mamba install -c conda-forge ipywidgets
+
+# link kernel to jupyter
+mamba install -c anaconda ipykernel
+python -m ipykernel install --user --name torch --display-name "Python (torch)"
+```
+
+# Running jupyterlab
+
+On the AWS machine run:
+
+```
+jupyter lab --no-browser --port=8889
+```
+
+On your local machine, set up SSH port forwarding:
+
+```
+ssh -f <user>@<remote> -L 8889:localhost:8889 -N
+```
+
 # Starting RStudio Server
 
 1. Run rstudio docker image:
