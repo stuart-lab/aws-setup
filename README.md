@@ -149,7 +149,8 @@ ssh -f <user>@<remote> -L 8889:localhost:8889 -N
 1. Run rstudio docker image:
 
 ```
-docker run --name rstudio --rm -e PASSWORD=password -d -p 8787:8787 timoast/rstudio
+mkdir rstudio # create directory for rstudio docker filesystem
+docker run --name rstudio -v /home/ubuntu/rstudio:/home/rstudio --rm -e PASSWORD=password -d -p 8787:8787 timoast/rstudio
 ```
 
 2. Open `<ip>:8889`, enter username `rstudio` and passwork `password`
