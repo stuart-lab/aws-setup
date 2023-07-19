@@ -63,6 +63,19 @@ curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Ma
 bash Mambaforge-$(uname)-$(uname -m).sh
 ```
 
+# Installing Nvidia drivers
+
+If using an instance with a GPU, you will need to install the Nvidia drivers. Follow the instructions [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#)
+or use the following for a `g4dn` instance:
+
+```
+sudo apt install nvidia-cuda-toolkit
+sudo apt install nvidia-driver-510
+sudo reboot
+nvidia-smi
+nvcc -V
+```
+
 # Installing jupyterlab
 
 Jupyterlab should be installed in the base mamba environment, all other packages will be installed in separate environments.
