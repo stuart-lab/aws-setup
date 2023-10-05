@@ -174,6 +174,36 @@ docker run --name rstudio -v /home/ubuntu/rstudio:/home/rstudio --rm -e PASSWORD
 docker run -ti --rm timoast/rstudio R
 ```
 
+# Building Signac website
+
+The required data is stored at `s3://stuartlab/vignette_data/`:
+
+```
+git clone https://github.com/stuart-lab/signac.git
+cd signac
+mkdir vignette_data
+cd vignette_data
+
+# copy vignette data from s3
+# this takes a while
+aws s3 sync s3://stuartlab/vignette_data/ .
+cd ..
+
+# checkout the branch needed
+git checkout develop
+git pull
+
+# we need to build certain vignettes first so the object is present and updated
+Rscript -e "pkgdown::build_article('monocle')"
+Rscript -e "pkgdown::build_article('pbmc_multiomic')"
+Rscript -e "pkgdown::build_article('mouse_brain_vignette')"
+
+# build the whole site
+Rscript -e "pkgdown::build_site()"
+```
+
+You might need to set the github PAT, follow instructions from usethis.
+
 # Other tips
 
 The instance type can be changed easily via the AWS console by stopping the instance and then selecting
